@@ -15,7 +15,7 @@ def send_task_email(sender_email, receiver_email, password):
     html = f"""
     <html>
     <body>
-        <h2>📋 Daily Task Summary</h2>
+        <h2>Daily Task Summary</h2>
         <p>Today: {today.date()}</p>
         <h3>Overdue Tasks:</h3>
         {overdue.to_html(index=False) if not overdue.empty else "<p>No overdue tasks! ✅</p>"}
@@ -28,7 +28,7 @@ def send_task_email(sender_email, receiver_email, password):
     msg = MIMEMultipart()
     msg['From'] = sender_email
     msg['To'] = receiver_email
-    msg['Subject'] = "📌 Daily Task Summary"
+    msg['Subject'] = "Daily Task Summary"
     msg.attach(MIMEText(html, 'html'))
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:

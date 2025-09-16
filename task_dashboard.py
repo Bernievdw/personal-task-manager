@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
-st.set_page_config(page_title="📋 Personal Task Manager", layout="wide")
-st.title("📋 Personal Task Manager")
+st.set_page_config(page_title="Personal Task Manager", layout="wide")
+st.title("Personal Task Manager")
 
 tasks = pd.read_csv("tasks.csv")
 tasks['deadline'] = pd.to_datetime(tasks['deadline'])
