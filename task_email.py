@@ -5,7 +5,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 def send_task_email(sender_email, receiver_email, password):
-    # Load tasks
     tasks = pd.read_csv("tasks.csv")
     tasks['deadline'] = pd.to_datetime(tasks['deadline'])
     today = datetime.today()
@@ -13,7 +12,6 @@ def send_task_email(sender_email, receiver_email, password):
     overdue = tasks[(tasks['deadline'] < today) & (tasks['status'] == 'Incomplete')]
     high_priority = overdue[overdue['priority']=="High"]
 
-    # HTML Email
     html = f"""
     <html>
     <body>
@@ -38,7 +36,6 @@ def send_task_email(sender_email, receiver_email, password):
         server.send_message(msg)
     print("Email sent successfully!")
 
-# Example usage
 if __name__ == "__main__":
     sender = "youremail@gmail.com"
     receiver = "receiver@gmail.com"
