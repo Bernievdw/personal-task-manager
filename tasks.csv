@@ -1,0 +1,6 @@
+task,deadline,status,priority,category
+Finish report,2025-09-20,Incomplete,High,Work
+Send invoice,2025-09-18,Complete,Medium,Work
+Call supplier,2025-09-19,Incomplete,High,Work
+Prepare presentation,2025-09-21,Incomplete,Medium,Work
+Buy groceries,2025-09-17,Incomplete,Low,Personal
